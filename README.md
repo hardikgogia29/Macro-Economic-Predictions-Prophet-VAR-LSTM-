@@ -12,14 +12,14 @@ Key Finding: No single model is best for all variables. Different models excel a
 
 | Notebook | Description |
 |----------|-------------|
-| 0__Executive_Summary | Synthesis of all findings |
-| 1__Correlation_and_Non-Time_Series_Clustering | Exploratory analysis and country clustering |
-| 2__TimeSeries_Clustering_and_Regression | DTW-based clustering of GDP patterns |
-| 3__Granger_Causality | Causal relationships for India |
-| 4__Prophet_Forecasting | Facebook Prophet implementation |
-| 5__VAR_Model | Vector AutoRegression model |
-| 6__LSTM | Deep learning LSTM implementation |
-| 7__Model_Comparison_Enhanced | Model benchmarking and error analysis |
+| 0. Executive_Summary | Synthesis of all findings |
+| 1. Correlation_and_Non-Time_Series_Clustering | Exploratory analysis and country clustering |
+| 2. TimeSeries_Clustering_and_Regression | DTW-based clustering of GDP patterns |
+| 3. Granger_Causality | Causal relationships for India |
+| 4. Prophet_Forecasting | Facebook Prophet implementation |
+| 5. VAR_Model | Vector AutoRegression model |
+| 6. LSTM | Deep learning LSTM implementation |
+| 7. Model_Comparison_Enhanced | Model benchmarking and error analysis |
 
 ## Results
 
@@ -61,25 +61,6 @@ RMSE: 2.01 (LSTM: 0.25) - 8 times worse
 
 Why: Unemployment is highly autocorrelated with sudden shocks. Prophet does not model lag dependencies. LSTM explicitly learns temporal patterns and handles shock-prone variables better.
 
-## Recommendation
-
-Use an ensemble approach combining all three models by variable type:
-
-```
-GDP -> VAR
-Inflation -> Prophet
-Unemployment -> LSTM
-Current Balance -> Prophet
-Fiscal Balance -> VAR
-Debt -> Prophet
-Investment -> VAR
-GNS -> VAR
-Exports -> Prophet
-Imports -> Prophet
-```
-
-This ensemble approach likely outperforms any single model on 9-10 variables.
-
 ## Data
 
 Time Period: 2000-2025 (26 years)
@@ -102,7 +83,7 @@ Hyperparameters: Mostly defaults
 
 ## How to Use
 
-1. Start with 0__Executive_Summary.ipynb for findings
-2. Review 7__Model_Comparison_Enhanced.ipynb for error analysis
+1. Start with 0. Executive_Summary.ipynb for findings
+2. Review 7. Model_Comparison_Enhanced.ipynb for error analysis
 3. Explore other notebooks for methodology details
 4. Raw data is in data.csv
